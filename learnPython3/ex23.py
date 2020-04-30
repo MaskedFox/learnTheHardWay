@@ -12,8 +12,8 @@ def main(language_file, encoding, errors):
 # Function will strip the content of line and then it will be encoded and store the bytes into raw_bytes
 def print_line(line, encoding, errors):
     next_lang = line.strip()
-    #raw_bytes = next_lang.decode(encoding, errors = errors)
     raw_bytes = next_lang.encode(encoding, errors = errors)
+    #cooked_string=raw_bytes.decode(encoding, errors=errors)
 
     print(next_lang ,"<===>",  raw_bytes)
 # opens the file by default as read with options encoding
