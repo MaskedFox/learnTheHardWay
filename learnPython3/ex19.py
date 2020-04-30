@@ -8,7 +8,7 @@ def cheese_and_crackers(cheese_count, boxes_of_crackers):
 
 
 print("We can just give the function numbers directly:")
-# Calling funciton with argumetns 20 and 30
+# Calling function with arguments 20 and 30
 cheese_and_crackers(20,30)
 
 print("OR, we can use variables from our script:")

@@ -9,7 +9,7 @@ script, from_file, to_file = argv
 # we could do these two on one line, how?
 # We open a file that comes from_file and we read it with the flag "r", then we store it in indata
 indata = open(from_file, 'r')
-#indata = in_file.read()
+# indata = in_file.read()
 
 print(f"The input file is {len(indata)} bytes long")
 
