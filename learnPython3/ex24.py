@@ -1,11 +1,11 @@
 print("Let's practice everything.")
 print('You\'d need to know \'about escapes with \\ that do:')
-print('\n newliens and \t tabes.')
+print('\n newliens and \t tabs.')
 
 poem = """
 \tThe lovely world
 with logic so firmly planted
-cannot discern \n the need of love
+cannot discern \n the needs of love
 nor comprehend passion from intuition
 and requires an explanation
 \n\t\twhere there is none.
@@ -17,7 +17,7 @@ print("----------")
 
 five = 10 - 2 + 3 - 6
 print(f"This should be five: {five}")
-
+# Function that takes one arg, each var is doing some type of math and the functions return each variable outcome
 def secret_formula(started):
     jelly_beans = started * 500
     jars = jelly_beans / 1000
@@ -25,6 +25,7 @@ def secret_formula(started):
     return jelly_beans, jars, crates
 
 start_point = 10000
+# We are calling function secret_formula with arg "start_point" and setting three different variabels with it.
 beans, jars, crates = secret_formula(start_point)
 
 # remember that this is another way to format a string
