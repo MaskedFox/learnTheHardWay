@@ -5,6 +5,8 @@ def break_words(stuff):
 
 def sort_words(words):
     """ Sorts the words. """
+    # NOTE: There are differences between sorted() which will only sort it when you use the function, rather
+    # than change the values in sorted way, this is done by .sort()
     return sorted(words)
 
 def print_first_word(words):
