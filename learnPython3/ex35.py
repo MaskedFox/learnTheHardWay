@@ -13,15 +13,13 @@ def gold_room():
     #    how_much = int(choice)
     #else:
     #    dead("Man, learn to type a number")
-    choice = input("> ")
-    if choice == type(int):
-        how_much = int(choice)
-    else:
-        dead("Man, learn to type a number")
-
-    if how_much < 50:
-        print("Nice, you 're not greedy, you win!")
-        exit(0)
+    try:
+        choice = int(input("> "))
+    except:
+        raise ValueError("Man, learn to type a number ")
+    if choice < 50:
+            print("Nice, you 're not greedy, you win!")
+            exit(0)
     else:
         dead("You greedy bastard!")
 
