@@ -13,9 +13,9 @@ def gold_room():
     #    how_much = int(choice)
     #else:
     #    dead("Man, learn to type a number")
-    choice = int(input("> "))
-    if int:
-        how_much = choice
+    choice = input("> ")
+    if choice == type(int):
+        how_much = int(choice)
     else:
         dead("Man, learn to type a number")
 
