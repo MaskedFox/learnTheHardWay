@@ -7,10 +7,15 @@ def gold_room():
     This should be fix prompting the user with int(input())
     """
     print("This room is full of gold. How much do you take?")
-
-    choice = input("> ")
-    if "0" in choice or "1" in choice:
-        how_much = int(choice)
+    # RE doing the below
+    #choice = input("> ")
+    #if "0" in choice or "1" in choice:
+    #    how_much = int(choice)
+    #else:
+    #    dead("Man, learn to type a number")
+    choice = int(input("> "))
+    if int:
+        how_much = choice
     else:
         dead("Man, learn to type a number")
 
@@ -34,7 +39,7 @@ def bear_room():
     bear_moved = False
 
     while True:
-        choice = input("> ")
+        choice = str(input("> "))
 
         if choice == "take honey":
             dead("The bear looks at you then slaps your face off.")
@@ -58,7 +63,7 @@ def cthulhu_room():
     print("He, it , whatever stares at you and you go insane.")
     print("Do you flee for your life or eat your head?")
 
-    choice = input("> ")
+    choice = str(input("> "))
 
     if "flee" in choice:
         start()
@@ -79,13 +84,13 @@ def dead(why):
 def start():
     """
     Starts the game, prompts for an input, either left or right, which calls the function under each choice.
-    if the user chooses anything other than left or right it will call the function dead and the game will be over.        
+    if the user chooses anything other than left or right it will call the function dead and the game will be over.
     """
     print("You are in a dark room.")
     print('There is a door to your right and left.')
     print("Which one do you take?")
 
-    choice = input("> ")
+    choice = str(input("> "))
 
     if choice == "left":
         bear_room()
