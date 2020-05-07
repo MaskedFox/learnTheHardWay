@@ -18,3 +18,26 @@ class MyStuff(object):
 thing = MyStuff()
 thing.apple()
 print(thing.tangerine)
+
+
+# This is my own little Class
+
+class Human(object):
+
+    def __init__(self, name):
+        self.name = name
+    
+    def speak(self):
+        print(f"Hello {self.name}")
+    
+    def eat(self):
+        print("Im hungry...")
+    
+    def wake(self):
+        print (f"{self.name} you invoked me and woke me up!")
+        print("Meh")
+
+Alex = Human('Alex')
+Alex.speak()
+Alex.wake()
+Alex.eat()
