@@ -9,12 +9,18 @@ class Dog(Animal):
         ## ??
         self.name = name
 
+    def bark(self):
+        print("Woof Woof")
+
 # ??
 class Cat(Animal):
 
     def __init__(self,name):
         ## ??
         self.name = name
+
+    def meow(self):
+        print("Meow Meow")
 
 ## ??
 class Person(object):
@@ -24,6 +30,9 @@ class Person(object):
         self.name = name
         ## Person has-a pet of some kind
         self.pet = None
+    
+    def talk(self):
+        print("Hello")
 
 ## ??
 class Employee(Person):
