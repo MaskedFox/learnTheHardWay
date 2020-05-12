@@ -6,21 +6,25 @@ class Scene(object):
 
     def enter(self):
         print("this scene is not yet configured.")
-        print("SUbclass it and implement enter().")
+        print("Subclass it and implement enter().")
         exit(1)
 
 
 class Engine(object):
-
+    # Inherits scene_map from class Map
     def __init__(self, scene_map):
         self.scene_map = scene_map
 
     def play(self):
+        # uses the class Map method opening_scene
         current_scene = self.scene_map.opening_scene()
+        # uses class Map method .next_scene
         last_scene = self.scene_map.next_scene("Finished")
-
+        
         while current_scene != last_scene:
+            # call the current_scene function .enter() and store it
             next_scene_name = current_scene.enter()
+            # from next_scene_name get the value of key and store it
             current_scene = self.scene_map.next_scene(next_scene_name)
 
         # Be sure to print out the last scene
@@ -70,6 +74,7 @@ class CentralCorridor(Scene):
                 and blast you repeatedly in the face until you are
                 dead. Then he eats you
             """))
+            # To understand how this return works or how returning the next room works see Class Map below
             return "death"
         elif action == "dodge!":
             print(dedent("""
@@ -117,8 +122,8 @@ class LaserWeaponArmory(Scene):
         code = f"{randint(1,9)}{randint(1,9)}{randint(1,9)}"
         guess = input('[keypad]> ')
         guesses = 0
-
-        while guess != code and guesses < 10:
+        # Fixed guesses < 10 for guesses < 9, which gives you 10 guesses since we start at 0
+        while guess != code and guesses < 9:
             print("BZZZZEDDD!")
             guesses += 1
             guess = input("[keypad]> ")
@@ -214,6 +219,7 @@ class EscapePod(Scene):
                 time. You won!
             """))
             return "finished"
+
 class Finished(Scene):
 
     def enter(self):
@@ -221,7 +227,7 @@ class Finished(Scene):
         return "finished"
 
 class Map(object):
-
+    # We declate the return scenes above here as keys with the values of the matching function.
     scenes = {
         "central_corridor": CentralCorridor(),
         "laser_weapon_armory": LaserWeaponArmory(),
@@ -230,10 +236,10 @@ class Map(object):
         "death" : Death(),
         "finished" : Finished()
     }
-
+    # Here we start with the first Scene we chose, in this case is "central_corridor"
     def __init__(self, start_scene):
         self.start_scene = start_scene
-
+    # Here is where we get the "next scene" as arg scene_name, which should be the key and using get() we get the value which we store in val
     def next_scene(self, scene_name):
         val = Map.scenes.get(scene_name)
         return val
@@ -242,5 +248,7 @@ class Map(object):
         return self.next_scene(self.start_scene)
 
 a_map = Map("central_corridor")
+#NOTE: The Engine() class is inheriting the class Map() from a_map right?
 a_game = Engine(a_map)
+# starts the game current scene to nex scene until the last scene
 a_game.play()
