@@ -1,5 +1,5 @@
 #from nose.tools import *
-from game import Room
+from x47.game import Room
 import unittest
 
 def test_room():

@@ -1,0 +1,3 @@
+
+class scan(object):
+    pass

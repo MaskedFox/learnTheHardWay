@@ -4,16 +4,16 @@ except ImportError:
     from distutils.core import setup
     
 config = {
-    "description" : "Learn Python3 the Hard Way",
+    "description" : "Exercise 48 from Learn Python3 the Hard Way",
     "author" : "Masked Fox",
     "url" : "github",
     "download_url" : "https://github.com/MaskedFox/learnTheHardWay",
     "author_email" : "iammaskedfx@gmail.com",
     "version" : "0.1",
     "install_requires" : ["nose"],
-    "packages" : ["NAME"],
+    "packages" : ["x48"],
     "scripts" : [],
-    "name" : "LPTHW"
+    "name" : "ex48"
 }
 
 setup(**config)
