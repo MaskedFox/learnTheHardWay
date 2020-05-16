@@ -8,11 +8,14 @@ def scan(phrase):
     stop = ["the", "in", "of", "from","at", "it"]
     nouns = ["door", "bear", "princess", "cabinet"]
     #numbers = [123456789]
+    # This will hold the tuples with type and word in it
     sentence = []
 
     #print(words)
+    # Iterates through words, so we can have one object to deal with
     for i in range(len(words)):
         #print(words[i])
+        # if this specific object is in the list direction then append the type and word[i] to sentence as a tuple
         if words[i] in direction:
             sentence.append(("direction", words[i]))
         elif words[i] in verb:
@@ -21,6 +24,7 @@ def scan(phrase):
             sentence.append(("stop", words[i]))
         elif words[i] in nouns:
             sentence.append(("noun", words[i]))
+        # if nothing else is True,then is the word[i] a digit? if True then convert word[i] to and int
         elif (words[i]).isdigit():
             try:
                 num = int(words[i])
