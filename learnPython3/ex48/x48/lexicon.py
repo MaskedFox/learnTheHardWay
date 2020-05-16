@@ -1,6 +1,9 @@
 
 def scan(phrase):
 
+    #phrase = input("> ")
+    
+    #NOTE: how do you test for user input?
     words = phrase.split()
 
     direction = ["north", "south", "east", "west", "down", "up", "left", "right", "back"]
