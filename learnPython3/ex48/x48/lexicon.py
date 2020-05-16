@@ -7,7 +7,7 @@ def scan(phrase):
     verb = ["go", "stop", "kill", "eat"]
     stop = ["the", "in", "of", "from","at", "it"]
     nouns = ["door", "bear", "princess", "cabinet"]
-    numbers = [123456789]
+    #numbers = [123456789]
     sentence = []
 
     #print(words)
@@ -31,7 +31,6 @@ def scan(phrase):
                 None
         else:
             sentence.append(("error", words[i]))
-        
     return sentence
 
 
