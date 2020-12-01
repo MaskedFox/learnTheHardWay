@@ -1,10 +1,10 @@
-//TODO Watch the video
+//TODO Watch the video < DONE
 
 ++ // Increment
 
 -- // Decrement
 
-//TODO Read more about it
+//TODO Read more about it < DONE
 Logical Operators:
 && // Logical and
 || // Logical or

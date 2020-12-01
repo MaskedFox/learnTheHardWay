@@ -12,12 +12,12 @@ int main()
 
 }
 
-//TODO Printf escape codes and format sequences exercise
+//TODO Printf escape codes and format sequences exercise < DONE
 
 // Did all the break exercises
 
 // Extra Credit:
 // Broke the program as many ways as i could
-//TODO run "man 3 printf"
+//TODO run "man 3 printf" < DONE
 
 
