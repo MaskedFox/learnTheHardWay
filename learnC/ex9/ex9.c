@@ -2,12 +2,12 @@
 
 int main(int argc, char *argv[])
 {
-    int i = 1;
+    int i = 25;
 
-    while (i <= 25)
+    while (i >= 1)
     {
         printf("%d\n", i);
-        i++;
+        i--;
     }
     return 0;
 }
@@ -19,4 +19,5 @@ int main(int argc, char *argv[])
 // Done
 
 //TODO: Extra Credit
-//
+//Done
+//Done
