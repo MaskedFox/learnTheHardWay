@@ -10,13 +10,14 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    int i = 0;
+    int i = -1;
     // argv[1] its the user argument for ex "Alex", thats 1 argument
     //argv[1][0] its the user argument but on position 0, ex "A"
-    for (i = 0; argv[1][i] != '\0'; i++)
+    for ( ; i++, argv[1][i] != '\0';)
     {
-        char letter = argv[1][i];
-        char lowerLetter = tolower(letter);
+        char letter, lowerLetter;
+        letter = argv[1][i];
+        lowerLetter = tolower(letter);
 
         switch (lowerLetter)
         {
