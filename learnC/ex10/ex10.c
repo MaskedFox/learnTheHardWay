@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 
 int main(int argc, char *argv[])
 {
@@ -15,40 +16,35 @@ int main(int argc, char *argv[])
     for (i = 0; argv[1][i] != '\0'; i++)
     {
         char letter = argv[1][i];
+        char lowerLetter = tolower(letter);
 
-        switch (letter)
+        switch (lowerLetter)
         {
             case 'a':
-            case 'A':
-                printf("%d: 'A'\n", i);
+                printf("%d: 'a'\n", i);
                 break;
 
             case 'e':
-            case 'E':
-                printf("%d: 'E'\n",i);
+                printf("%d: 'e'\n",i);
                 break;
 
             case 'i':
-            case 'I':
-                printf("%d: 'I'\n", i);
+                printf("%d: 'i'\n", i);
                 break;
 
             case 'o':
-            case 'O':
-                printf("%d: 'O'\n", i);
+                printf("%d: 'o'\n", i);
                 break;
 
             case 'u':
-            case 'U':
-                printf("%d: 'U'\n", i);
+                printf("%d: 'u'\n", i);
                 break;
 
             case 'y':
-            case 'Y':
                 if (i > 2)
                 {
                     // It's only sometiumes Y
-                    printf("%d: 'Y'\n", i);
+                    printf("%d: 'y'\n", i);
                 }
                 break;
 
@@ -62,5 +58,11 @@ int main(int argc, char *argv[])
 }
 
 //TODO: How to break it
+//Done
+//Done
+//Done
+//Done
 
 //TODO: extra Credit
+//DONE
+//
