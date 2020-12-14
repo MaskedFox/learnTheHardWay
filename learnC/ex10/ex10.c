@@ -53,8 +53,9 @@ int main(int argc, char *argv[])
                 {
                     // It's only sometiumes Y
                     printf("%d: 'y'\n", i);
+                    //break;
                 }
-                break;
+                //break;
             }
             else
             {
@@ -77,5 +78,5 @@ int main(int argc, char *argv[])
 //TODO: extra Credit
 //DONE
 //DONE
-//
-//
+//DONE
+//DONE
