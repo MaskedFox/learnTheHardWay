@@ -22,41 +22,46 @@ int main(int argc, char *argv[])
             letter = argv[1][i];
             lowerLetter = tolower(letter);
 
-            switch (lowerLetter)
+            if (lowerLetter == 'a')
             {
-                case 'a':
-                    printf("%d: 'a'\n", i);
-                    break;
-
-                case 'e':
-                    printf("%d: 'e'\n",i);
-                    break;
-
-                case 'i':
-                    printf("%d: 'i'\n", i);
-                    break;
-
-                case 'o':
-                    printf("%d: 'o'\n", i);
-                    break;
-
-                case 'u':
-                    printf("%d: 'u'\n", i);
-                    break;
-
-                case 'y':
-                    if (i > 2)
-                    {
-                        // It's only sometiumes Y
-                        printf("%d: 'y'\n", i);
-                    }
-                    break;
-
-                default:
-                    printf("%d: %c is not a vowel\n", i, letter);
-
-
+                printf("%d: 'a'\n", i);
+                //break;
             }
+            else if(lowerLetter == 'e')
+            {
+                printf("%d: 'e'\n",i);
+                //break;
+            }
+            else if(lowerLetter == 'i')
+            {
+                printf("%d: 'i'\n", i);
+                //break;
+            }
+            else if(lowerLetter == 'o')
+            {
+                printf("%d: 'o'\n", i);
+                //break;
+            }
+            else if(lowerLetter == 'u')
+            {
+                printf("%d: 'u'\n", i);
+                //break;
+            }
+            else if(lowerLetter == 'y')
+            {
+                if (i > 2)
+                {
+                    // It's only sometiumes Y
+                    printf("%d: 'y'\n", i);
+                }
+                break;
+            }
+            else
+            {
+                printf("%d: %c is not a vowel\n", i, letter);
+            }
+
+
         }
     }
 
@@ -71,4 +76,6 @@ int main(int argc, char *argv[])
 
 //TODO: extra Credit
 //DONE
+//DONE
+//
 //
