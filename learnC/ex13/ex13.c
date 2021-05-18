@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 
     // go through each string in argv
     // why am I skipping argv[0]?
-    for (i = 1; i < argc; i++)
+    for (i=0 ; i < argc; i++)
     {
         printf("arg %d %s\n", i, argv[i]);
     }
@@ -28,13 +28,16 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-//TODO How to break it
-//
-//
-//
+// TODO How to break it
+// MEH
+// DONE
+// DONE Segmentation Fault, if the num of states is higher than 4
 
-//TODO Extra credit
-//
-//
-//
-//
+/*
+// TODO Extra credit
+DONE: Functions, increasing or decreasing variables, another for loop, count by character, 
+DONE: add nother variable or  add another increment or decrement, can also start the initialization 
+without anything like this int i = 0; for (; i<4; i++);
+IN PROGRESS
+NOT DONE YET
+*/

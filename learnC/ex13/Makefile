@@ -1,4 +1,4 @@
-CFLAGS=-Wall -g 
+CFLAGS=-Wall 
 
 all:
 	make ex13
