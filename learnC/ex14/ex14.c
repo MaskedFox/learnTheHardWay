@@ -2,7 +2,7 @@
 #include <ctype.h>
 
 // forward declaration
-int can_print_it(charch);
+int can_print_it(char ch);
 void print_letters(char arg[]);
 
 void print_arguments(int argc, char *argv[])
@@ -21,6 +21,7 @@ void print_letters(char arg[])
 
     for (i=0; arg[i] != '\0'; i++)
     {
+        char ch = arg[i];
         if (can_print_it(ch))
         {
             printf("'%c' == %d ", ch, ch);
