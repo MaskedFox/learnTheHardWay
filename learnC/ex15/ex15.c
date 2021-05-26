@@ -27,13 +27,14 @@ int main(int argc, char *argv[])
     // creates a points of type char that points at names and
     // at the same time it derefence it self? Am i right?
     char **cur_name = names;
-    printf("Printing **cur_name = names; %c\n", **cur_name);
+    printf("Printing **cur_name = names; %d\n", *cur_name);
 
 
     // second way using pointers
     for (i = 0; i < count; i++)
     {
-        printf("%s is %d years old. \n", *(cur_name + i), *(cur_age + i));
+        //i made it print the address of each name instead
+        printf("%d is %d years old. \n", (cur_name + i), (cur_age + i));
     }
 
     printf("---\n");
@@ -48,6 +49,8 @@ int main(int argc, char *argv[])
     
 
     // fourth way with pointers in a stupid complex way
+    // Trying to understand the below for loop
+    printf("printing names %d\n", names);
     for (cur_name = names, cur_age = ages;
         (cur_age - ages) < count; cur_name++, cur_age++)
         {
