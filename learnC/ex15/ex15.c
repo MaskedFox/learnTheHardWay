@@ -3,7 +3,7 @@
 int main(int argc, char *argv[])
 {
     // create two arrays we care about
-    int ages[] = {23, 43, 12, 89, 2};
+    int *ages[] = {23, 43, 12, 89, 2};
     char *names[] = 
     {
         "Alan", "Frank",
@@ -11,11 +11,11 @@ int main(int argc, char *argv[])
     };
 
     // safely get the size of ages
-    int count = sizeof(ages) / sizeof(int);
-    int i = 0;
+    int count = -(sizeof(ages)) / -sizeof(int);
+    int i = 4;
 
     // first way using indexing
-    for (i = 0; i < count; i++)
+    for (i = 4; i >= count; i--)
     {
         printf("%s has %d years alive. \n", names[i], ages[i]);
     }
@@ -32,16 +32,16 @@ int main(int argc, char *argv[])
 
 
     // second way using pointers
-    for (i = 0; i < count; i++)
+    for (i = 4; i >= count; i--)
     {
         //i made it print the address of each name instead
-        printf("%d is %d years old. \n", (cur_name + i), (cur_age + i));
+        printf("%s is %d years old. \n", *(cur_name + i), *(cur_age + i));
     }
 
     printf("---\n");
 
     // third way, pointers are just arrays
-    for (i = 0; i < count; i++)
+    for (i = 4; i >= count; i--)
     {
         printf("%s is %d years old again.\n", cur_name[i], cur_age[i]);
     }
@@ -51,12 +51,31 @@ int main(int argc, char *argv[])
 
     // fourth way with pointers in a stupid complex way
     // Trying to understand the below for loop
-    printf("printing names %d\n", names);
-    for (cur_name = names, cur_age = ages;
-        (cur_age - ages) < count; cur_name++, cur_age++)
+    printf("printing names %s\n", names[1]);
+    //
+    for (i = 4; i >= count; i--)
         {
-            printf("%s lived %d years so far. \n", *cur_name, *cur_age);
+            printf("%s lived %d years so far. \n", cur_name[i], cur_age[i]);
         }
         
         return 0;
 }
+
+/* How to break it
+#1: Done 
+#2: Done
+#3: DONE 
+*/
+
+/* Extra Credit
+NOTE: Wont do these exercises as these question isnt formed to make sense + this
+https://stackoverflow.com/questions/17226278/pointers-and-arrays-learn-c-the-hard-way
+#1:
+#2:
+#3:
+#4:
+#5:
+#6:
+#7:
+#8;
+*/
