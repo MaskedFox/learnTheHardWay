@@ -5,6 +5,7 @@
 #include <string.h>
 
 // whats is this suppose to do?
+// define fos constants, part of C preprocessor (CPP)... creates a buffer?
 #define MAX_DATA 512
 #define MAX_ROWS 100
 
@@ -12,6 +13,7 @@ struct Address
 {
     int id;
     int set;
+    // fixed size for MAX_*
     char name[MAX_DATA];
     char email[MAX_DATA];
 };
@@ -25,16 +27,24 @@ struct Database
 struct Connection
 {
     // why did we created a pointer to a FILE type?
+    // FILE its an struct and you need it to work with file handling
     FILE *file;
     struct Database *db;
 };
 
 // die its a new function i should read on 
+// die function to abort with an error, kills the program with an error
 void die(const char *message)
 {
+    // errno is set by system calls and some library func in the event of an error 
+    // to indicate if anything went wrong, you ll need to use perror or strerror to 
+    // convert the return of errno to strings
+    // NOTE strerror will return a pointer to the textual representation of the 
+    // current errno value
     if (errno)
     {
         // perror is a new function i should read on
+        // converts the int error from errno to a string error message
         perror(message);
     }
     else
@@ -42,6 +52,8 @@ void die(const char *message)
         printf("ERROR: %s\n", message);
     }
     // Why the exit function? Is it like break?
+    // either EXIT_SUCCESS or EXIT_FAILURE 
+    // i should try the above (stdlib.h)
     exit(1);
 }
 
@@ -75,10 +87,14 @@ struct Connection *Database_open(const char *filename, char mode)
     if (mode == 'c')
     {
         // I should prob read on fopen as well
+        // Opens the filename into memory and its contents are overwritten
         conn->file = fopen(filename, "w");
     }
     else
-    {
+    {   
+        // open the filename and loads it into memory and 
+        // sets up a pointer which points to the first char in it.
+        // Opens a text file for both reading and writing
         conn->file = fopen(filename, "r+");
         if (conn->file)
         {
@@ -110,13 +126,22 @@ void Database_close(struct Connection *conn)
 void Database_write(struct Connection *conn)
 {
     // rewind is a new function i should read on
+    // It seems fseek its prefeer over rewind, why?
+    // Basically w rewind there is no way to check whether
+    // the operation was succesful or not, therefore fseek()
+    // is encouraged
+    // rewind is simples to use if you want just to go back to the beginning of file
     rewind(conn->file);
+    // Review and practice this
+    // Writes data from the array pointed to, by ptr to the given stream
     int rc = fwrite(conn->db, sizeof(struct Database), 1, conn->file);
     if (rc != 1)
     {
         die("Failed to write Database.");
     }    
     // fflush is a new function i should read on
+    // used to clear the buffer and accept the next string
+    // review and practice this
     rc = fflush(conn->file);
     if (rc== -1)
     {
@@ -147,6 +172,9 @@ void Database_set(struct Connection *conn, int id, const char *name, const char 
     addr->set = 1;
     // WARNING: bug, read the "How to break it" and fix this
     // strncpy is a new function i should read on
+    // Used to copy one string to another.
+    // Returns a pointer to the destination string
+    // (char *dest, const char *src, size_t n)
     char *res = strncpy(addr->name, name, MAX_DATA);
     if (!res)
     {
