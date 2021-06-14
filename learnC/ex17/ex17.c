@@ -235,6 +235,10 @@ int main(int argc, char *argv[])
     if (argc > 3) 
     {
         // atoi is a new function i should prob read about
+        // converts the string to an int
+        // ex: strNum = "1984"
+        // strNumToInt = atoi(strNum)
+        // strNumToInt has 1984 as numbers or int 
         id = atoi(argv[3]);
     }
     
@@ -286,3 +290,11 @@ int main(int argc, char *argv[])
         Database_close(conn);
         return 0;
 }
+
+/* How to Break it
+#1:
+#2:
+#3:
+#4:
+#5:
+*/
