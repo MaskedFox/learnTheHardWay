@@ -4,6 +4,7 @@
 
 int main()
 {
+    // Define the struct
     typedef struct point 
     {
         float x;
@@ -11,8 +12,10 @@ int main()
     }
     point;
 
+    // Create the "objects"
     point *pt1, *pt2;
 
+    //Allocate memory for each object
     pt1 = (point*) malloc(sizeof(point));
     if (pt1 == NULL)
     {
@@ -25,6 +28,7 @@ int main()
         printf("cannot allocate mmeoery if size %d\n", sizeof(point));
     }
 
+    /Free the objects
     free(pt1);
     free(pt2);
 
