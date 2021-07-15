@@ -34,7 +34,7 @@ struct Connection
 
 // die its a new function i should read on 
 // die function to abort with an error, kills the program with an error
-void die(const char *message)
+void die(const char *message, struct Connection *conn)
 {
     // errno is set by system calls and some library func in the event of an error 
     // to indicate if anything went wrong, you ll need to use perror or strerror to 
@@ -46,6 +46,7 @@ void die(const char *message)
         // perror is a new function i should read on
         // converts the int error from errno to a string error message
         perror(message);
+        perror(conn);
     }
     else
     {
@@ -175,7 +176,9 @@ void Database_set(struct Connection *conn, int id, const char *name, const char 
     // Used to copy one string to another.
     // Returns a pointer to the destination string
     // (char *dest, const char *src, size_t n)
-    char *res = strncpy(addr->name, name, MAX_DATA);
+    char *res = strncpy(addr->name, name, MAX_DATA - 1);
+    // to prevent a Buffer Overflow
+    addr->name[MAX_DATA - 1] = '\0';
     if (!res)
     {
         die("Email copy failed");
@@ -292,9 +295,18 @@ int main(int argc, char *argv[])
 }
 
 /* How to Break it
-#1:
+#1: No idea what do here =/
+#2: Done
+#3: Done 
+#4: Done
+#5: Waiting to do the Extra Credit to come back to this
+*/
+
+/* Extra Credit
+#1: 
 #2:
 #3:
 #4:
 #5:
+#6:
 */
